@@ -1,0 +1,49 @@
+{
+    "name": "rnr1721/le7-db-doctrine",
+    "description": "Doctrine ORM integration for le7 PHP MVC framework",
+    "keywords": ["le7", "le7-framework", "framework", "doctrine", "database", "ORM", "component"],
+    "authors": [
+        {
+            "name": "Eugeny G",
+            "email": "rnr1721@gmail.com",
+            "homepage": "https://github.com/rnr1721",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Core\\Factories\\": "src/Factories",
+            "Core\\Interfaces\\": "src/Interfaces",
+            "Core\\Controller\\Console\\": "src/Console"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TestsModel\\": "tests/TestsModel"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "rnr1721/le7-core": "^1.1",
+        "doctrine/orm": "^2.17",
+        "doctrine/doctrine-bundle": "^2.11",
+        "doctrine/annotations": "^2.0",
+        "doctrine/dbal": "^3.7",
+        "doctrine/doctrine-migrations-bundle": "^3.3"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^5.7",
+        "phpunit/phpunit": "^10.0"
+    },
+    "scripts": {
+        "test": [
+            "@phpunit",
+            "@psalm"
+        ],
+        "phpunit": "phpunit",
+        "psalm": "psalm"
+    }
+}
