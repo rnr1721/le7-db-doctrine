@@ -17,7 +17,7 @@
         "psr-4": {
             "Core\\Factories\\": "src/Factories",
             "Core\\Interfaces\\": "src/Interfaces",
-            "Core\\Controller\\Console\\": "src/Console"
+            "Core\\Controller\\Console\\System\\": "src/System"
         }
     },
     "autoload-dev": {

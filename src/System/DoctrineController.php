@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Controller\Console;
+namespace Core\Controller\Console\System;
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
