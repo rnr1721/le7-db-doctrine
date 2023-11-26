@@ -43,9 +43,6 @@
             "@phpunit",
             "@psalm"
         ],
-        "post-package-install": [
-            "Core\\Installers\\DoctrineLe7Installer::postPackageInstall"
-        ],
         "phpunit": "phpunit",
         "psalm": "psalm"
     }
