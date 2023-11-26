@@ -5,7 +5,7 @@ namespace Core\Installers;
 class DoctrineLe7Installer
 {
 
-    public function copyConfig()
+    public static function copyConfig()
     {
         $sourceConfigFile = __DIR__ . '/dist/db_doctrine.php';
         $sourceContainerConfigFile = __DIR__ . '/dist/dbDoctrineContainerConf.php';
