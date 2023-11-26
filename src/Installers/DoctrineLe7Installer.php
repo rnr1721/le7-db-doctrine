@@ -7,6 +7,7 @@ class DoctrineLe7Installer
 
     public static function copyConfig()
     {
+        
         $sourceConfigFile = __DIR__ . '/../../dist/db_doctrine.php';
         $sourceContainerConfigFile = __DIR__ . '/../../dist/dbDoctrineContainerConf.php';
         $destinationConfigDirectory = __DIR__ . '/../../../../../config';
