@@ -1,0 +1,9 @@
+{
+    "description": "Plugin that integrate Doctrine ORM in Le7 PHP MVC framework",
+    "update_description": "will be created config and container item if not exists",
+    "run": null,
+    "copy": {
+        "dist/db_doctrine.php": "config/db_doctrine.php",
+        "dist/dbDoctrineContainerConf.php": "container/dbDoctrineContainerConf.php"
+    }
+}
