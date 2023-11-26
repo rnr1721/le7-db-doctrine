@@ -38,6 +38,9 @@
         "vimeo/psalm": "^5.7",
         "phpunit/phpunit": "^10.0"
     },
+    "conflict": {
+        "other-package": "rnr1721/le7-db-redbean"
+    },
     "scripts": {
         "test": [
             "@phpunit",
