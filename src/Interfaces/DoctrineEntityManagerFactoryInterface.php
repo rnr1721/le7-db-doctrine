@@ -35,12 +35,12 @@ interface DoctrineEntityManagerFactoryInterface
     public function setIsDevMode(bool $devModeState): self;
 
     /**
-     * The setAnnotationsPath method sets the path to the directory containing
-     * entity annotations.
+     * The setAnnotationsPath method sets the paths to the directory containing
+     * entities.
      *
-     * @param string $annotationsPath The path to the directory containing entity annotations.
+     * @param string|array $paths The path to the directory containing entity annotations.
      *
      * @return self
      */
-    public function setAnnotationsPath(string $annotationsPath): self;
+    public function setPaths(string|array $paths): self;
 }

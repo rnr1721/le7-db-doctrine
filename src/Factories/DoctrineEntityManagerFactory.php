@@ -18,7 +18,7 @@ class DoctrineEntityManagerFactory implements DoctrineEntityManagerFactoryInterf
 {
 
     private bool $isDevMode = true;
-    private string $annotationsPath = '';
+    private array $paths = [];
 
     /**
      * @inheritdoc
@@ -27,18 +27,22 @@ class DoctrineEntityManagerFactory implements DoctrineEntityManagerFactoryInterf
             array $connectionData,
     ): EntityManagerInterface
     {
-        $annotationsPath = $this->annotationsPath;
+        $paths = $this->paths;
 
-        if (empty($annotationsPath)) {
-            $annotationsPath = __DIR__ . "/Models";
+        if (empty($paths)) {
+            $paths = [
+                __DIR__ . "/Models"
+            ];
         }
 
-        if (!is_dir($annotationsPath)) {
-            throw new InvalidArgumentException("Model path does not exist: $annotationsPath");
+        foreach ($paths as $path) {
+            if (!is_dir($path)) {
+                throw new InvalidArgumentException("Model path does not exist: $path");
+            }
         }
 
         $config = ORMSetup::createAttributeMetadataConfiguration(
-                        paths: array($this->annotationsPath),
+                        paths: $paths,
                         isDevMode: $this->isDevMode,
         );
 
@@ -63,9 +67,13 @@ class DoctrineEntityManagerFactory implements DoctrineEntityManagerFactoryInterf
     /**
      * @inheritdoc
      */
-    public function setAnnotationsPath(string $annotationsPath): self
+    public function setPaths(string|array $paths): self
     {
-        $this->annotationsPath = $annotationsPath;
+        if (is_string($paths)) {
+            $this->paths[] = $paths;
+        } else {
+            $this->paths = array_merge($this->paths, $paths);
+        }
         return $this;
     }
 }

@@ -15,6 +15,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
+            "Core\\Installers\\": "src/Installers",
             "Core\\Factories\\": "src/Factories",
             "Core\\Interfaces\\": "src/Interfaces",
             "Core\\Controller\\Console\\System\\": "src/System"
@@ -30,7 +31,6 @@
         "rnr1721/le7-core": "^1.1",
         "doctrine/orm": "^2.17",
         "doctrine/doctrine-bundle": "^2.11",
-        "doctrine/annotations": "^2.0",
         "doctrine/dbal": "^3.7",
         "doctrine/doctrine-migrations-bundle": "^3.3"
     },
@@ -42,6 +42,9 @@
         "test": [
             "@phpunit",
             "@psalm"
+        ],
+        "post-install-cmd": [
+            "Core\\Installers\\DoctrineLe7Installer::copyConfigFile"
         ],
         "phpunit": "phpunit",
         "psalm": "psalm"
