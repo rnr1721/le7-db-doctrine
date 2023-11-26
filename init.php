@@ -2,7 +2,7 @@
 
 $conflictFiles = [
     'config/db_redbean.php',
-    'container/dbRedbeanContainerConf.php'
+    'container/dbRedbeanConf.php'
 ];
 
 foreach ($conflictFiles as $conflictFile) {

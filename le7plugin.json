@@ -4,6 +4,6 @@
     "run": "init.php",
     "copy": {
         "dist/db_doctrine.php": "config/db_doctrine.php",
-        "dist/dbDoctrineContainerConf.php": "container/dbDoctrineContainerConf.php"
+        "dist/dbDoctrineConf.php": "container/dbDoctrineConf.php"
     }
 }
