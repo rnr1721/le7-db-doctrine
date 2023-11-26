@@ -17,6 +17,7 @@
         "psr-4": {
             "Core\\Factories\\": "src/Factories",
             "Core\\Interfaces\\": "src/Interfaces",
+            "Core\\Installers\\": "src/Installers",
             "Core\\Controller\\Console\\System\\": "src/System"
         }
     },
@@ -42,8 +43,8 @@
             "@phpunit",
             "@psalm"
         ],
-        "post-install-cmd": [
-            "php -f vendor/rnr1721/le7-db-doctrine/installer.php"
+        "post-package-install": [
+            "Core\\Installers\\DoctrineLe7Installer::copyConfig"
         ],
         "phpunit": "phpunit",
         "psalm": "psalm"
