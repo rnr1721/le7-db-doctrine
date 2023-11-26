@@ -2,11 +2,16 @@
 
 namespace Core\Installers;
 
+use Composer\Installer\PackageEvent;
+
 class DoctrineLe7Installer
 {
 
-    public static function copyConfig()
+    public static function postPackageInstall(PackageEvent $event)
     {
+        
+        $installedPackage = $event->getOperation()->getPackage();
+        echo $installedPackage . ' setup';
         
         $sourceConfigFile = __DIR__ . '/../../dist/db_doctrine.php';
         $sourceContainerConfigFile = __DIR__ . '/../../dist/dbDoctrineContainerConf.php';
