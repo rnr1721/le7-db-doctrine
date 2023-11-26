@@ -17,7 +17,6 @@
         "psr-4": {
             "Core\\Factories\\": "src/Factories",
             "Core\\Interfaces\\": "src/Interfaces",
-            "Core\\Installers\\": "src/Installers",
             "Core\\Controller\\Console\\System\\": "src/System"
         }
     },
