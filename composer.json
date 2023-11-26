@@ -15,7 +15,6 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Core\\Installers\\": "src/Installers",
             "Core\\Factories\\": "src/Factories",
             "Core\\Interfaces\\": "src/Interfaces",
             "Core\\Controller\\Console\\System\\": "src/System"
@@ -44,7 +43,7 @@
             "@psalm"
         ],
         "post-install-cmd": [
-            "Core\\Installers\\DoctrineLe7Installer::copyConfigFile"
+            "php installer.php"
         ],
         "phpunit": "phpunit",
         "psalm": "psalm"
