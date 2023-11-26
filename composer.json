@@ -39,7 +39,7 @@
         "phpunit/phpunit": "^10.0"
     },
     "conflict": {
-        "other-package": "rnr1721/le7-db-redbean"
+        "rnr1721/le7-db-redbean": "*"
     },
     "scripts": {
         "test": [
