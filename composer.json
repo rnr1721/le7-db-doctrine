@@ -43,6 +43,7 @@
             "@psalm"
         ],
         "post-install-cmd": [
+            "pwd",
             "php ./vendor/rnr1721/le7-db-doctrine/installer.php"
         ],
         "phpunit": "phpunit",
