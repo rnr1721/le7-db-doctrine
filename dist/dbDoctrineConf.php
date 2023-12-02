@@ -18,8 +18,6 @@ return [
         $connectData = $config->array('doctrine_config') ?? [];
         $pathsCustom = array_values($config->arrayWithKeyStartWith('doctrine_paths_'));
         
-        print_r($pathsCustom);
-        
         /** @var DoctrineEntityManagerFactoryInterface $entityManagerFactory */
         $entityManagerFactory = $c->get(DoctrineEntityManagerFactoryInterface::class);
 
