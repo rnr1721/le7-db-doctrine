@@ -5,5 +5,6 @@
     "copy": {
         "dist/db_doctrine.php": "config/db_doctrine.php",
         "dist/dbDoctrineConf.php": "container/dbDoctrineConf.php"
-    }
+    },
+    "dir": "Entity"
 }

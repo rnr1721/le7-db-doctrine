@@ -16,13 +16,14 @@ return [
         $config = $c->get(ConfigInterface::class);
 
         $connectData = $config->array('db_doctrine') ?? [];
+        $paths = $config->array('db_paths') ?? [];
 
         /** @var DoctrineEntityManagerFactoryInterface $entityManagerFactory */
         $entityManagerFactory = $c->get(DoctrineEntityManagerFactoryInterface::class);
 
         $entityManagerFactory->setIsDevMode($config->bool('isProduction') ?? false);
 
-        $entityManagerFactory->setPaths('../Models');
+        $entityManagerFactory->setPaths($paths);
         return $entityManagerFactory->getEntityManager($connectData);
     })
 ];
