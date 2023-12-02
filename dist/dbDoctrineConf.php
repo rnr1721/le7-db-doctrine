@@ -15,15 +15,19 @@ return [
         /** @var ConfigInterface $config */
         $config = $c->get(ConfigInterface::class);
 
-        $connectData = $config->array('db_doctrine') ?? [];
-        $paths = $config->array('db_paths') ?? [];
-
+        $connectData = $config->array('doctrine_config') ?? [];
+        $pathsCustom = array_values($config->arrayWithKeyStartWith('doctrine_paths_'));
+        
+        print_r($pathsCustom);
+        
         /** @var DoctrineEntityManagerFactoryInterface $entityManagerFactory */
         $entityManagerFactory = $c->get(DoctrineEntityManagerFactoryInterface::class);
 
-        $entityManagerFactory->setIsDevMode($config->bool('isProduction') ?? false);
+        $isProduction = $config->bool('isProduction') ?? false;
+        
+        $entityManagerFactory->setIsDevMode(!$isProduction);
 
-        $entityManagerFactory->setPaths($paths);
+        $entityManagerFactory->setPaths($pathsCustom);
         return $entityManagerFactory->getEntityManager($connectData);
     })
 ];

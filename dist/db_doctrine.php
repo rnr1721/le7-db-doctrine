@@ -1,14 +1,12 @@
 <?php
 
 return [
-    'db_paths' => [
-        '../Entity'
-    ],
-    'db_doctrine' => [
+    'doctrine_paths_base' => '../Model/Entity',
+    'doctrine_config' => [
         'driver' => 'pdo_mysql',
         'host' => 'localhost',
+        'dbname' => '',
         'user' => '',
-        'password' => '',
-        'dbname' => ''
+        'password' => ''
     ]
 ];
