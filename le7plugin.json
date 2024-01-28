@@ -7,11 +7,12 @@
         "{plugin_root}/dist/dbDoctrineConf.php": "{project_root}/container/dbDoctrineConf.php"
     },
     "dir": {
-        "Models":"{project_root}/Model",
-        "Entities":"{project_root}/Model/Entity"
+        "Migrations": "{project_root}/Migrations",
+        "Models": "{project_root}/Model",
+        "Entities": "{project_root}/Model/Entity"
     },
     "remove": {
-        "Redbean container config":"{project_root}/container/dbRedbeanConf.php",
-        "Redbean config":"{project_root}/config/db_redbean.php"
+        "Redbean container config": "{project_root}/container/dbRedbeanConf.php",
+        "Redbean config": "{project_root}/config/db_redbean.php"
     }
 }
